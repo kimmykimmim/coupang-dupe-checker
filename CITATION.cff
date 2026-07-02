@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "DejaBuy — 쿠팡 중복구매 방지기 (Coupang Duplicate-Purchase Guard)"
+abstract: >-
+  A local web app that warns you before you re-buy something you already own,
+  by matching the item against your purchase history with a Korean-aware
+  similarity engine (normalization + synonym dictionary + optional embeddings).
+authors:
+  # 실명으로 바꾸고 싶으면 아래 name 을 고치세요.
+  - name: "kimmykimmim"
+repository-code: "https://github.com/kimmykimmim/coupang-dupe-checker"
+url: "https://github.com/kimmykimmim/coupang-dupe-checker"
+license: MIT
+version: "1.0.0"
+date-released: "2026-07-02"
+keywords:
+  - python
+  - flask
+  - sqlite
+  - text-similarity
+  - shopping

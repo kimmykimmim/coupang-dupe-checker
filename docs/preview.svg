@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 460" font-family="Segoe UI, Malgun Gothic, sans-serif">
+  <rect width="880" height="460" rx="20" fill="#f4f5f7"/>
+
+  <!-- 헤더 -->
+  <g transform="translate(40,34)">
+    <rect x="-6" y="-6" width="52" height="52" rx="12" fill="#3a6ff0"/>
+    <g transform="translate(6,7)" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 3 h5 l3.5 20 h17 l4 -14 H10"/>
+      <circle cx="12" cy="27" r="2.4" fill="#fff" stroke="none"/>
+      <circle cx="25" cy="27" r="2.4" fill="#fff" stroke="none"/>
+    </g>
+    <text x="60" y="18" font-size="24" font-weight="700" fill="#1f2430">DejaBuy · 쿠팡 중복구매 방지기</text>
+    <text x="60" y="40" font-size="14" fill="#7a828c">이미 산 물건, 또 사지 마세요.</text>
+  </g>
+
+  <!-- 입력 카드 -->
+  <g transform="translate(40,110)">
+    <rect width="800" height="92" rx="14" fill="#fff" stroke="#e3e6ea"/>
+    <text x="20" y="30" font-size="12" fill="#7a828c">사려는 제품명</text>
+    <rect x="20" y="40" width="560" height="36" rx="9" fill="#fff" stroke="#e3e6ea"/>
+    <text x="34" y="63" font-size="14" fill="#1f2430">남성 정장 셔츠 네이비</text>
+    <rect x="596" y="40" width="184" height="36" rx="9" fill="#3a6ff0"/>
+    <text x="688" y="63" font-size="14" font-weight="600" fill="#fff" text-anchor="middle">중복 여부 확인</text>
+  </g>
+
+  <!-- 경고 배너 (빨강) -->
+  <g transform="translate(40,222)">
+    <rect width="800" height="66" rx="11" fill="#fdeaea" stroke="#f3b4b4"/>
+    <text x="22" y="30" font-size="16" font-weight="700" fill="#e23b3b">⛔ 이미 있는 물건일 가능성이 매우 높습니다!</text>
+    <text x="22" y="52" font-size="13" fill="#c0554f">아래 구매 이력을 확인하세요.</text>
+  </g>
+
+  <!-- 매칭된 이력 카드 -->
+  <g transform="translate(40,304)">
+    <rect width="800" height="60" rx="9" fill="#fff" stroke="#e3e6ea"/>
+    <text x="20" y="27" font-size="15" font-weight="700" fill="#1f2430">무지 화이트 와이셔츠 100수</text>
+    <text x="20" y="47" font-size="12" fill="#7a828c">의류 · 29,000원 · 2026-03-11</text>
+    <rect x="648" y="17" width="132" height="26" rx="13" fill="#e23b3b"/>
+    <text x="714" y="34" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">거의 동일 90%</text>
+  </g>
+
+  <g transform="translate(40,382)">
+    <rect width="800" height="46" rx="9" fill="#fff" stroke="#e3e6ea"/>
+    <text x="20" y="28" font-size="13" fill="#7a828c">유사도 엔진: 정규화 → 동의어 사전(와이셔츠=셔츠) → 다중 신호 조합 → 카테고리 가산점</text>
+  </g>
+</svg>

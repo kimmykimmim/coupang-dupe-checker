@@ -1,0 +1,11 @@
+{
+  "name": "쿠팡 중복구매 방지기",
+  "short_name": "중복방지",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f5f7",
+  "theme_color": "#3a6ff0",
+  "icons": [
+    { "src": "/static/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

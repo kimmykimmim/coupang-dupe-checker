@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>주문내역 가져오기 - 확인</title>
+<style>
+  :root { --bg:#f4f5f7; --card:#fff; --line:#e3e6ea; --brand:#3a6ff0; --muted:#7a828c;
+          --yellow:#c98a00; --yellowbg:#fff6e0; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:"Malgun Gothic","맑은 고딕",system-ui,sans-serif; background:var(--bg); color:#1f2430; }
+  .wrap { max-width:900px; margin:0 auto; padding:28px 18px 60px; }
+  h1 { font-size:20px; margin:0 0 4px; }
+  .sub { color:var(--muted); font-size:13px; margin-bottom:18px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px; }
+  table { width:100%; border-collapse:collapse; font-size:13px; }
+  th,td { text-align:left; padding:8px 8px; border-bottom:1px solid var(--line); vertical-align:middle; }
+  th { color:var(--muted); font-weight:600; font-size:12px; }
+  input, select { width:100%; padding:8px 9px; border:1px solid var(--line); border-radius:8px; font-size:13px; font-family:inherit; }
+  input[type=checkbox] { width:18px; height:18px; }
+  button { cursor:pointer; border:0; border-radius:9px; padding:11px 18px; font-size:14px; font-weight:600; background:var(--brand); color:#fff; }
+  a.back { color:var(--muted); font-size:13px; text-decoration:none; }
+  .dupmark { font-size:11px; color:#c98a00; background:var(--yellowbg); padding:2px 7px; border-radius:20px; white-space:nowrap;}
+  .warnbox { background:var(--yellowbg); border:1px solid #f0d492; color:var(--yellow); border-radius:11px; padding:12px 14px; margin-bottom:16px; font-size:13px;}
+  .cols { display:flex; gap:8px; } .cols input { min-width:0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>📥 가져올 항목 확인</h1>
+  <div class="sub">파싱 결과입니다. 필요한 것만 체크하고, 값이 틀리면 바로 고친 뒤 등록하세요.</div>
+
+  {% if not items %}
+    <div class="card">
+      <div class="warnbox">인식된 상품이 없습니다. 주문목록 화면 전체(상품명·가격·날짜가 보이게)를 복사해 붙여넣었는지 확인해 주세요.</div>
+      <a class="back" href="/">← 돌아가기</a>
+    </div>
+  {% else %}
+  <form method="post" action="/import/confirm">
+    <div class="card">
+      <table>
+        <thead><tr>
+          <th style="width:34px;"><input type="checkbox" id="all" checked onclick="toggleAll(this)"></th>
+          <th>제품명</th><th style="width:160px;">카테고리</th>
+          <th style="width:110px;">가격</th><th style="width:140px;">구매일</th>
+        </tr></thead>
+        <tbody>
+        {% for it in items %}
+          <tr>
+            <td><input type="checkbox" name="include" value="{{loop.index}}" class="rowchk" {% if not it.dup %}checked{% endif %}></td>
+            <td>
+              <input name="name_{{loop.index}}" value="{{it.name}}">
+              {% if it.dup %}<div style="margin-top:4px;"><span class="dupmark">이미 목록에 있음</span></div>{% endif %}
+            </td>
+            <td>
+              <select name="category_{{loop.index}}">
+                {% for c in categories %}<option {% if c=='기타' %}selected{% endif %}>{{c}}</option>{% endfor %}
+              </select>
+            </td>
+            <td><input name="price_{{loop.index}}" type="number" value="{{it.price}}"></td>
+            <td><input name="date_{{loop.index}}" type="date" value="{{it.date or ''}}"></td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div style="margin-top:16px; display:flex; gap:14px; align-items:center;">
+      <button type="submit">체크한 항목 등록</button>
+      <a class="back" href="/">← 취소하고 돌아가기</a>
+    </div>
+  </form>
+  {% endif %}
+</div>
+<script>
+  function toggleAll(box){ document.querySelectorAll('.rowchk').forEach(c => c.checked = box.checked); }
+</script>
+</body>
+</html>
