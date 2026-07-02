@@ -7,10 +7,15 @@
 
 *A local web app that warns you before you re-buy something you already own — powered by a Korean-aware similarity engine.*
 
+[![Live Demo](https://img.shields.io/badge/▶_Live_Demo-바로_체험하기-1f9d55?style=for-the-badge)](https://kimgyubum123.pythonanywhere.com)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-3a6ff0.svg)](LICENSE)
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-3.0-000000?logo=flask&logoColor=white)
 ![SQLite](https://img.shields.io/badge/SQLite-local-003B57?logo=sqlite&logoColor=white)
+
+**🔗 지금 바로 써보기 → [kimgyubum123.pythonanywhere.com](https://kimgyubum123.pythonanywhere.com)**
+<sub>(체험판: 입력 데이터는 방문자별로 분리되어 임시 저장됩니다)</sub>
 
 <img src="docs/preview.svg" width="720" alt="DejaBuy 미리보기">
 
