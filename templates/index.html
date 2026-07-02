@@ -71,6 +71,15 @@
     <span class="flag off">○ 기본 유사도 사용 (의미 모델 미설치)</span>
   {% endif %}
 
+  {% if demo %}
+  <div class="card" style="border-color:#f0d492; background:#fff6e0; padding:14px 16px; margin-top:12px;">
+    <b style="color:#c98a00;">🧪 체험판(데모)입니다.</b>
+    <span class="muted">입력한 데이터는 <b>당신 브라우저에만</b> 임시로 저장되고 다른 방문자와 섞이지 않습니다.
+    예시 데이터로 자유롭게 테스트해보세요. 실제로 쓰려면 코드를
+    <a href="https://github.com/kimmykimmim/coupang-dupe-checker" target="_blank">GitHub</a>에서 받아 직접 실행하세요.</span>
+  </div>
+  {% endif %}
+
   <!-- 1) 구매 전 확인 -->
   <div class="card">
     <h2>① 구매 전 확인</h2>
